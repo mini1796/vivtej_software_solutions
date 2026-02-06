@@ -1,168 +1,430 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Delete Account | VivTej Software Solutions</title>
-    <link rel="stylesheet" href="styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delete Account | Vivtej Software Solutions</title>
     <link rel="icon" type="image/png" href="./logo_vivtej.png">
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
     <style>
-        .delete-container {
-            max-width: 700px;
-            margin: 120px auto 60px;
-            padding: 40px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-        }
-        h1 { margin-bottom: 20px; color: #333; }
-        .warning-box {
-            background: #fff3cd;
-            border-left: 4px solid #ffc107;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 0 5px 5px 0;
-        }
-        .danger-box {
-            background: #fef2f2;
-            border-left: 4px solid #dc2626;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 0 5px 5px 0;
-        }
-        .danger-box h3 { color: #dc2626; margin-top: 0; }
-        .warning-box h3 { color: #d97706; margin-top: 0; }
-        
-        .otp-wrapper {
-            margin: 30px 0;
-            text-align: center;
-        }
-        .otp-input {
-            font-size: 24px;
-            text-align: center;
-            letter-spacing: 5px;
-            padding: 15px;
-            width: 200px;
-            margin: 10px auto;
-            display: block;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            transition: border-color 0.3s;
-        }
-        .otp-input:focus {
-            border-color: #dc2626;
-            outline: none;
+      body {
+        background-color: #f8fafc;
+      }
+      
+      .policy-wrapper {
+        padding: 60px 20px 80px;
+        min-height: 80vh;
+      }
+
+      .policy-card {
+        max-width: 900px;
+        margin: 0 auto;
+        background: #ffffff;
+        border-radius: 24px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+        padding: 60px 80px;
+        border: 1px solid rgba(226, 232, 240, 0.8);
+      }
+
+      @media (max-width: 768px) {
+        .policy-card {
+            padding: 40px 24px;
         }
         
-        .btn {
-            border: none;
-            padding: 12px 30px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            font-weight: 500;
-            transition: opacity 0.3s;
+        .policy-wrapper {
+            padding: 40px 16px 60px;
         }
-        .btn-danger {
-            background: #dc2626;
-            color: white;
-        }
-        .btn-danger:hover {
-            opacity: 0.9;
-        }
-        .btn-secondary {
-            background: #e5e7eb;
-            color: #374151;
-            margin-left: 10px;
-        }
-        .btn-secondary:hover {
-            background: #d1d5db;
-        }
-        
-        ul { padding-left: 20px; margin-top: 10px; }
-        li { margin-bottom: 5px; color: #4b5563; }
-        
-        /* Spinner for loading state inside button or div */
-        .spinner-sm {
-            display: inline-block;
-            width: 16px;
-            height: 16px;
-            border: 2px solid rgba(255,255,255,0.3);
-            border-radius: 50%;
-            border-top-color: #fff;
-            animation: spin 1s ease-in-out infinite;
-            vertical-align: middle;
-            margin-right: 5px;
-        }
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
+      }
+
+      .policy-header {
+        text-align: center;
+        margin-bottom: 3.5rem;
+        padding-bottom: 2.5rem;
+        border-bottom: 1px solid #e2e8f0;
+      }
+
+      .policy-header h1 {
+        font-size: 3rem;
+        color: var(--text-main);
+        margin-bottom: 1.5rem;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+      }
+
+      .policy-body {
+        font-size: 1.05rem;
+        color: #475569;
+      }
+      
+      .policy-section {
+        margin-bottom: 3rem;
+      }
+
+      .policy-section h2 {
+        font-size: 1.6rem;
+        color: var(--text-main);
+        margin-bottom: 1.25rem;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        letter-spacing: -0.01em;
+      }
+      
+      .policy-section h2::before {
+          content: '';
+          display: block;
+          width: 6px;
+          height: 28px;
+          background: linear-gradient(to bottom, var(--accent-blue), var(--accent-hover));
+          margin-right: 16px;
+          border-radius: 4px;
+      }
+
+      .policy-section p {
+        margin-bottom: 1rem;
+        line-height: 1.75;
+      }
+      
+      /* Specific Styles for Delete Page */
+      .danger-alert {
+          background-color: #fef2f2;
+          border-left: 4px solid #ef4444;
+          padding: 24px;
+          border-radius: 0 12px 12px 0;
+          color: #991b1b;
+          margin-bottom: 2rem;
+      }
+      
+      .danger-alert strong {
+          display: block;
+          font-size: 1.1rem;
+          margin-bottom: 0.5rem;
+          color: #b91c1c;
+      }
+
+      .warning-alert {
+          background-color: #fffbeb;
+          border-left: 4px solid #f59e0b;
+          padding: 20px 24px;
+          border-radius: 0 12px 12px 0;
+          color: #92400e;
+          margin-bottom: 2rem;
+      }
+
+      .otp-wrapper {
+          margin: 30px 0;
+          text-align: center;
+      }
+      
+      .otp-input {
+          font-size: 24px;
+          text-align: center;
+          letter-spacing: 5px;
+          padding: 15px;
+          width: 100%;
+          max-width: 300px;
+          margin: 10px auto;
+          display: block;
+          border: 2px solid #e2e8f0;
+          border-radius: 12px;
+          transition: all 0.3s;
+          font-family: monospace;
+          background: #f8fafc;
+      }
+      
+      .otp-input:focus {
+          border-color: #ef4444;
+          outline: none;
+          box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.1);
+          background: #fff;
+      }
+      
+      /* Email input styling re-using otp-input base but tailored */
+      input[type="email"].otp-input {
+          text-align: left;
+          letter-spacing: normal;
+          font-family: var(--font-main);
+          font-size: 1rem;
+          max-width: 100%;
+      }
+      
+      .btn-danger {
+          background: #ef4444;
+          color: white;
+          padding: 14px 32px;
+          border-radius: 10px;
+          font-weight: 600;
+          border: none;
+          cursor: pointer;
+          transition: all 0.3s;
+          font-size: 1rem;
+          box-shadow: 0 4px 12px rgba(239, 68, 68, 0.2);
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+      }
+      
+      .btn-danger:hover {
+          background: #dc2626;
+          transform: translateY(-2px);
+          box-shadow: 0 8px 16px rgba(239, 68, 68, 0.25);
+      }
+      
+      .btn-danger:disabled {
+          opacity: 0.7;
+          cursor: not-allowed;
+          transform: none;
+      }
+      
+      .btn-secondary {
+          background: #f1f5f9;
+          color: #475569;
+          padding: 14px 24px;
+          border-radius: 10px;
+          font-weight: 600;
+          text-decoration: none;
+          display: inline-block;
+          margin-left: 12px;
+          transition: all 0.2s;
+          border: 1px solid #e2e8f0;
+      }
+      
+      .btn-secondary:hover {
+          background: #e2e8f0;
+          color: #1e293b;
+      }
+      
+      .spinner-sm {
+          display: inline-block;
+          width: 16px;
+          height: 16px;
+          border: 2px solid rgba(255,255,255,0.3);
+          border-radius: 50%;
+          border-top-color: #fff;
+          animation: spin 1s ease-in-out infinite;
+          margin-right: 8px;
+      }
+      
+      @keyframes spin {
+          to { transform: rotate(360deg); }
+      }
+      
+      .contact-box {
+          background: #f8faff;
+          border: 1px solid #e2e8f0;
+          border-radius: 16px;
+          padding: 32px;
+          margin-top: 1.5rem;
+      }
+      
+      .contact-box p { margin-bottom: 0.5rem; }
+      .contact-box strong { color: var(--text-main); }
+      .contact-box a { color: var(--accent-blue); font-weight: 600; }
+      
+      /* Deletion Container Layout */
+      .deletion-form-container {
+          background: #fff;
+          border: 1px solid #e2e8f0;
+          border-radius: 16px;
+          padding: 40px;
+          margin-top: 2rem;
+          box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+      }
+
     </style>
-</head>
-<body>
-    <!-- Navigation (Simplified) -->
-    <nav class="navbar" style="background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
-        <div class="nav-brand">
-            <a href="index.html" style="display: flex; align-items: center; text-decoration: none;">
-                <img src="./logo_vivtej.png" alt="VivTej Logo" class="brand-logo" style="height: 40px; margin-right: 10px;">
-                <span style="color: #333; font-weight: bold; font-size: 1.2rem;">VivTej Software Solutions</span>
-            </a>
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="container nav-container">
+        <a href="./index.html" class="brand">
+          <img src="./logo_vivtej.png" alt="VivTej Logo" class="brand-logo" />
+          <span>VivTej Software Solutions</span>
+        </a>
+        <div class="nav-actions">
+          <div class="nav-links">
+            <a href="./services.html">Services</a>
+            <a href="./projects.html">Projects</a>
+            <a href="./about.html">About</a>
+          </div>
+          <a href="#" class="btn btn-primary open-quote-modal">Get a quote</a>
         </div>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
     </nav>
 
-    <div class="delete-container">
-        <h1>Delete Account</h1>
-        
-        <!-- Step 1: Warning and Request -->
-        <div id="step1">
-            <div class="danger-box">
-                <h3>⚠️ Warning: This action cannot be undone</h3>
-                <p>Deleting your account will:</p>
+    <!-- Policy Content -->
+    <div class="policy-wrapper">
+      <div class="policy-card">
+        <div class="policy-header">
+          <h1>Delete Account</h1>
+          <p class="subtitle" style="color: #64748b; font-size: 1.1rem; margin-top: 0.5rem;">VivTej Software Solutions</p>
+        </div>
+
+        <div class="policy-body">
+            
+            <div class="policy-section">
+                <div class="danger-alert">
+                    <strong>Warning: This action is permanent and cannot be undone.</strong>
+                    Before you proceed, please understand that deleting your account will result in the loss of all data associated with your profile across our platforms (Tej Reels and Vivtej TeleCRM).
+                </div>
+            </div>
+
+            <div class="policy-section">
+                <h2>1. What happens when you delete your account?</h2>
                 <ul>
-                    <li>Permanently remove all your personal information</li>
-                    <li>Delete your profile, preferences, and saved content</li>
-                    <li>Remove access to all your quiz history and statistics</li>
+                    <li style="margin-bottom: 12px;"><strong>Tej Reels (B2C):</strong> All your saved videos, current affairs bookmarks, quiz scores, and personalized preferences will be wiped from our database.</li>
+                    <li style="margin-bottom: 12px;"><strong>Vivtej TeleCRM (B2B):</strong> Your individual login access, call logs assigned to your profile, and personal performance metrics will be removed.</li>
+                </ul>
+                <div class="warning-alert" style="margin-top: 20px;">
+                    <strong>Note for Business Owners:</strong> Deleting a user account does not automatically delete company-wide lead data. To remove organizational data, please contact your account manager.
+                </div>
+                <p><strong>Subscriptions:</strong> Deleting your account does not automatically cancel active Razorpay subscriptions. You must cancel your active plan in the "Billing" section or via your bank before deleting your account to avoid further charges.</p>
+            </div>
+
+            <div class="policy-section">
+                <h2>2. The Deletion Process</h2>
+                
+                <h3 style="font-size: 1.15rem; margin-bottom: 1rem; color: #334155;">For Vivtej TeleCRM (B2B)</h3>
+                <p>Accounts are managed and provisioned by the User’s Employer/Organization Administrator. Individual users seeking to delete their profile must contact their organization's Admin. The Organization Admin may request a full workspace data purge by contacting <a href="mailto:support@vivtejsoftwaresolutions.com" style="color: var(--accent-blue);">support@vivtejsoftwaresolutions.com</a>.</p>
+
+                <h3 style="font-size: 1.15rem; margin-top: 2rem; margin-bottom: 1rem; color: #334155;">For Tej Reels (B2C)</h3>
+                <p>Users can independently request account deletion via our web portal through Email OTP verification used below:</p>
+                
+                <ol style="padding-left: 20px; line-height: 1.8; color: #475569; margin-bottom: 20px; margin-top: 1rem;">
+                    <li><strong>Enter Email:</strong> Provide your registered email address in the form below.</li>
+                    <li><strong>Verify OTP:</strong> A 6-digit verification code will be sent to your inbox.</li>
+                    <li><strong>Confirm:</strong> Once the code is verified, your account will be queued for immediate deletion.</li>
+                </ol>
+                
+                <!-- FUNCTIONAL FORM AREA -->
+                <div class="deletion-form-container delete-container">
+                    <!-- Step 1: Request -->
+                    <div id="step1">
+                        <div id="emailSection" style="margin-bottom: 24px;">
+                            <label for="email" style="display: block; margin-bottom: 12px; font-weight: 700; color: var(--text-main);">Enter Registered Email</label>
+                            <input type="email" id="email" class="otp-input" placeholder="name@example.com">
+                        </div>
+                        
+                        <p style="color: #64748b; font-size: 0.95rem; margin-bottom: 24px;">By clicking "Send Verification Code," you agree that you have read the implications of account deletion.</p>
+
+                        <div>
+                            <button class="btn btn-danger" onclick="requestDeletion()" id="requestBtn">Send Verification Code</button>
+                            <a href="index.html" class="btn btn-secondary">Cancel</a>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: OTP Verification -->
+                    <div id="step2" style="display: none; text-align: center;">
+                        <h3 style="color: var(--text-main); margin-bottom: 16px;">Enter Verification Code</h3>
+                        <p style="margin-bottom: 24px;">A 6-digit verification code has been sent to your inbox.</p>
+                        
+                        <div class="otp-wrapper">
+                            <input type="text" id="otp" class="otp-input" maxlength="6" placeholder="000000" pattern="[0-9]{6}" autocomplete="off">
+                            <p style="color: #94a3b8; font-size: 0.9rem; margin-top: 8px;">Code expires in 15 minutes</p>
+                        </div>
+
+                        <div>
+                            <button class="btn btn-danger" onclick="verifyAndDelete()" id="verifyBtn">Confirm Deletion</button>
+                            <button class="btn btn-secondary" onclick="location.reload()">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- END FUNCTIONAL FORM AREA -->
+            </div>
+
+            <div class="policy-section">
+                <h2>3. Data Retention Policy</h2>
+                <p>While your personal profile is deleted, Vivtej Educational Services Private Limited is required by Indian law to retain certain information:</p>
+                <ul>
+                    <li><strong>Invoices & Tax Records:</strong> Records of payments made via Razorpay will be kept for legal and audit purposes.</li>
+                    <li><strong>Security Logs:</strong> Minimal logs are retained to prevent fraud and ensure platform integrity.</li>
                 </ul>
             </div>
 
-            <div class="warning-box">
-                <h3>📋 What we keep</h3>
-                <p>Transaction records and payment history will be retained for legal and tax purposes as required by law.</p>
-            </div>
-
-            <!-- Email Input for Public Flow -->
-            <div id="emailSection" style="margin-top: 20px; display: none;">
-                <label for="email" style="display: block; margin-bottom: 8px; font-weight: bold; color: #333;">Enter your registered email address:</label>
-                <input type="email" id="email" class="otp-input" style="width: 100%; box-sizing: border-box; text-align: left; letter-spacing: normal; font-size: 16px; padding: 12px;" placeholder="name@example.com">
-            </div>
-
-            <p style="margin-top: 20px; color: #555;">If you're sure you want to proceed, click the button below. We'll send a verification code to your email to confirm your identity.</p>
-
-            <div style="margin-top: 20px;">
-                <button class="btn btn-danger" onclick="requestDeletion()" id="requestBtn">Send Verification Code</button>
-                <a href="index.html" class="btn btn-secondary" style="text-decoration: none;">Cancel</a>
-            </div>
-        </div>
-
-        <!-- Step 2: OTP Verification -->
-        <div id="step2" style="display: none;">
-            <div class="danger-box" style="background: #fff; border-color: #dc2626;">
-                <h3 style="text-align: center; color: #333;">Enter Verification Code</h3>
-                <p style="text-align: center;">We've sent a 6-digit verification code to your email.</p>
-                
-                <div class="otp-wrapper">
-                    <input type="text" id="otp" class="otp-input" maxlength="6" placeholder="000000" pattern="[0-9]{6}" autocomplete="off">
-                    <p style="text-align: center; color: #666; font-size: 0.9rem; margin-top: 5px;">Code expires in 15 minutes</p>
-                </div>
-
-                <div style="text-align: center;">
-                    <button class="btn btn-danger" onclick="verifyAndDelete()" id="verifyBtn">Confirm Deletion</button>
-                    <button class="btn btn-secondary" onclick="location.reload()">Cancel</button>
+            <div class="policy-section">
+                <h2>Contact Support</h2>
+                <p>If you no longer have access to your registered email or encounter issues with the OTP, please contact our Grievance Officer:</p>
+                <div class="contact-box">
+                    <p><strong>Name:</strong> Teja Sai</p>
+                    <p><strong>Email:</strong> <a href="mailto:teja@topicprep.com">teja@topicprep.com</a></p>
+                    <p><strong>Address:</strong> 32-3-32, Natthyapalem, Visakhapatnam, AP, India - 530012</p>
                 </div>
             </div>
+
         </div>
+      </div>
     </div>
 
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-top">
+          <div class="footer-brand-col">
+            <a href="./index.html" class="footer-logo">
+              <img src="./logo_vivtej.png" alt="VivTej Software Solutions" />
+              <span>VivTej</span>
+            </a>
+            <p class="footer-tagline">
+              Transforming ideas into high-performing digital products.
+            </p>
+          </div>
+          <div class="footer-links-col">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="./about.html">About Us</a></li>
+              <li><a href="./projects.html">Our Work</a></li>
+              <li><a href="./services.html">Services</a></li>
+            </ul>
+          </div>
+          <div class="footer-links-col">
+            <h4>Services</h4>
+            <ul>
+              <li><a href="./services.html">Mobile Apps</a></li>
+              <li><a href="./services.html">Web Development</a></li>
+              <li><a href="./services.html">UI/UX Design</a></li>
+              <li><a href="./services.html">Consulting</a></li>
+            </ul>
+          </div>
+          <div class="footer-links-col">
+            <h4>Contact</h4>
+            <ul class="contact-list">
+              <li>Visakhapatnam, India</li>
+              <li>
+                <a href="mailto:support@vivtejsoftwaresolutions.com"
+                  >support@vivtejsoftwaresolutions.com</a
+                >
+              </li>
+              <li><a href="tel:+919121947554">+91 9121947554</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2026 VivTej Software Solutions. All rights reserved.</p>
+          <div class="footer-legal">
+                <a href="./privacy.html">Privacy Policy</a>
+                <a href="./terms.html">Terms of Service</a>
+                <a href="./refund.html">Refund Policy</a>
+                <a href="./delete-account.html">Delete Account</a>
+            </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./script.js"></script>
+    
+    <!-- Preserved Deletion Logic -->
     <script>
         const API_BASE_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
             ? 'http://localhost:1710/api/v1' 
@@ -175,7 +437,8 @@
         window.onload = function() {
             if (!authToken) {
                 // Not logged in? Show email input field instead of error
-                document.getElementById('emailSection').style.display = 'block';
+                const emailSection = document.getElementById('emailSection');
+                if (emailSection) emailSection.style.display = 'block';
             }
         };
 
@@ -266,13 +529,13 @@
                     
                     document.querySelector('.delete-container').innerHTML = `
                         <div style="text-align: center;">
-                            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#27ae60" stroke-width="2" style="margin-bottom: 20px;">
+                            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="2" style="margin-bottom: 20px;">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
                             </svg>
-                            <h1>Account Deleted</h1>
-                            <p>Your account has been successfully deleted.</p>
-                            <p>We're sorry to see you go.</p>
-                            <a href="index.html" class="btn btn-primary" style="background: #0056b3; color: white; text-decoration: none; padding: 10px 20px; border-radius: 5px; margin-top: 20px; display: inline-block;">Return to Home</a>
+                            <h1 style="font-size: 2rem; margin-bottom: 1rem;">Account Deleted</h1>
+                            <p style="color: #475569; margin-bottom: 2rem;">Your account has been successfully deleted.</p>
+                            <p style="color: #64748b;">We're sorry to see you go.</p>
+                            <a href="index.html" class="btn btn-primary" style="background: var(--accent-blue); color: white; text-decoration: none; padding: 12px 24px; border-radius: 8px; margin-top: 24px; display: inline-block;">Return to Home</a>
                         </div>
                     `;
                 } else {
@@ -288,5 +551,5 @@
             }
         }
     </script>
-</body>
+  </body>
 </html>

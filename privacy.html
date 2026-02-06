@@ -1,253 +1,404 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Privacy Policy | Tej – Current Affairs Reels</title>
+    <title>Privacy Policy | Vivtej Software Solutions</title>
+    <link rel="icon" type="image/png" href="./logo_vivtej.png">
     <link rel="stylesheet" href="./styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
     <style>
-        .policy-content {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 80px 20px 60px;
-        }
+      body {
+        background-color: #f8fafc;
+      }
+      
+      .policy-wrapper {
+        padding: 60px 20px 80px;
+        min-height: 80vh;
+      }
 
-        .policy-content h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: #1a1a1a;
-        }
+      .policy-card {
+        max-width: 900px;
+        margin: 0 auto;
+        background: #ffffff;
+        border-radius: 24px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+        padding: 60px 80px;
+        border: 1px solid rgba(226, 232, 240, 0.8);
+      }
 
-        .policy-content h2 {
-            font-size: 1.5rem;
-            margin-top: 2.5rem;
-            margin-bottom: 1rem;
-            color: #2c2c2c;
+      @media (max-width: 768px) {
+        .policy-card {
+            padding: 40px 24px;
         }
+        
+        .policy-wrapper {
+            padding: 40px 16px 60px;
+        }
+      }
 
-        .policy-content h3 {
-            font-size: 1.2rem;
-            margin-top: 2rem;
-            margin-bottom: 0.75rem;
-            color: #3c3c3c;
-        }
+      .policy-header {
+        text-align: center;
+        margin-bottom: 3.5rem;
+        padding-bottom: 2.5rem;
+        border-bottom: 1px solid #e2e8f0;
+      }
 
-        .policy-content p,
-        .policy-content ul {
-            font-size: 1rem;
-            line-height: 1.8;
-            color: #4a4a4a;
-            margin-bottom: 1rem;
-        }
+      .policy-header h1 {
+        font-size: 3rem;
+        color: var(--text-main);
+        margin-bottom: 1.5rem;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+      }
 
-        .policy-content ul {
-            padding-left: 1.5rem;
-        }
+      .badge-date {
+        display: inline-flex;
+        align-items: center;
+        background: rgba(106, 90, 224, 0.08);
+        color: var(--accent-blue);
+        padding: 8px 20px;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 0.95rem;
+        letter-spacing: 0.01em;
+      }
 
-        .policy-content li {
-            margin-bottom: 0.5rem;
-        }
+      .policy-body {
+        font-size: 1.05rem;
+        color: #475569;
+      }
+      
+      .policy-intro {
+        margin-bottom: 2rem;
+        font-size: 1.15rem;
+        line-height: 1.8;
+      }
 
-        .policy-intro {
-            font-size: 1.1rem;
-            color: #666;
-            margin-bottom: 2rem;
-        }
+      .policy-section {
+        margin-bottom: 3rem;
+      }
 
-        .policy-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
+      .policy-section h2 {
+        font-size: 1.6rem;
+        color: var(--text-main);
+        margin-bottom: 1.25rem;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        letter-spacing: -0.01em;
+      }
+      
+      /* Subtle accent bar next to headings */
+      .policy-section h2::before {
+          content: '';
+          display: block;
+          width: 6px;
+          height: 28px;
+          background: linear-gradient(to bottom, var(--accent-blue), var(--accent-hover));
+          margin-right: 16px;
+          border-radius: 4px;
+      }
 
-        .policy-header .subtitle {
-            font-size: 1.1rem;
-            color: #666;
-            margin-top: 0.5rem;
-        }
+      .policy-section p {
+        margin-bottom: 1rem;
+        line-height: 1.75;
+      }
+
+      .policy-section ul {
+        list-style: none;
+        padding-left: 0;
+        margin-top: 1.25rem;
+        margin-bottom: 1.25rem;
+        background: #fcfcfc;
+        padding: 24px;
+        border-radius: 12px;
+        border: 1px solid #f1f5f9;
+      }
+      
+      .policy-section ul li {
+          position: relative;
+          padding-left: 28px;
+          margin-bottom: 1rem;
+          line-height: 1.6;
+      }
+      
+      .policy-section ul li:last-child {
+          margin-bottom: 0;
+      }
+      
+      .policy-section ul li::before {
+          content: "•";
+          color: var(--accent-blue);
+          font-weight: bold;
+          font-size: 1.2em;
+          position: absolute;
+          left: 6px;
+          top: -2px;
+      }
+      
+      .contact-box {
+          background: #f8faff;
+          border: 1px solid #e2e8f0;
+          border-radius: 16px;
+          padding: 32px;
+          margin-top: 1.5rem;
+      }
+      
+      .contact-box p {
+          margin-bottom: 0.75rem;
+      }
+      
+      .contact-box strong {
+          color: var(--text-main);
+          font-weight: 700;
+      }
+      
+      .important-note {
+          background-color: #fef2f2;
+          border-left: 4px solid #ef4444;
+          padding: 20px 24px;
+          border-radius: 0 12px 12px 0;
+          color: #991b1b;
+          font-weight: 600;
+          margin: 2.5rem 0;
+          line-height: 1.6;
+      }
+      
+      .policy-subtitle {
+          color: #64748b;
+          font-size: 0.95rem;
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
+          margin-bottom: 0.5rem;
+          font-weight: 700;
+      }
+      
+      /* Smooth link transitions */
+      a {
+          text-decoration: none;
+          color: inherit;
+      }
+      
+      .contact-box a {
+          color: var(--accent-blue);
+          font-weight: 600;
+          transition: color 0.2s;
+      }
+      
+      .contact-box a:hover {
+          color: var(--accent-hover);
+          text-decoration: underline;
+      }
+
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <!-- Navigation -->
     <nav class="navbar">
-        <div class="container nav-container">
-            <a href="./index.html" class="brand">
-                <img src="./logo_vivtej.png" alt="VivTej Logo" class="brand-logo">
-                <span>VivTej Software Solutions</span>
-            </a>
-            <div class="nav-actions">
-                <div class="nav-links">
-                    <a href="./services.html">Services</a>
-                    <a href="./projects.html">Projects</a>
-                    <a href="./about.html">About</a>
-                </div>
-                <a href="#" class="btn btn-primary open-quote-modal">Get a quote</a>
-            </div>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+      <div class="container nav-container">
+        <a href="./index.html" class="brand">
+          <img src="./logo_vivtej.png" alt="VivTej Logo" class="brand-logo" />
+          <span>VivTej Software Solutions</span>
+        </a>
+        <div class="nav-actions">
+          <div class="nav-links">
+            <a href="./services.html">Services</a>
+            <a href="./projects.html">Projects</a>
+            <a href="./about.html">About</a>
+          </div>
+          <a href="#" class="btn btn-primary open-quote-modal">Get a quote</a>
         </div>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
     </nav>
 
     <!-- Policy Content -->
-    <div class="policy-content">
+    <div class="policy-wrapper">
+      <div class="policy-card">
         <div class="policy-header">
-            <h1>🔐 Privacy Policy</h1>
-            <p class="subtitle">For Tej – Current Affairs Reels<br>
-                Owned by Vivtej Educational Services Private Limited</p>
+          <h1>Privacy Policy</h1>
+          <span class="badge-date">Last Updated: February 6, 2026</span>
         </div>
 
-        <h2>1. Introduction</h2>
-        <p>Vivtej Educational Services Private Limited ("we", "our", "us") operates the Tej – Current Affairs Reels mobile application ("App").</p>
-        <p>Your privacy is very important to us. This Privacy Policy explains how we collect, use, and protect your information when you use our app.</p>
-        <p>By using the app, you agree to the terms of this Privacy Policy.</p>
+        <div class="policy-body">
+            
+            <p class="policy-intro">
+                Vivtej Educational Services Private Limited ("we," "us," or "our") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our mobile applications: Tej – Current Affairs Reels and Vivtej TeleCRM.
+            </p>
 
-        <h2>2. Information We Collect</h2>
-        <p>We may collect the following types of information:</p>
+            <p>
+                By using our Services, you consent to the data practices described in this policy. If you do not agree with the terms of this privacy policy, please do not access the applications.
+            </p>
 
-        <h3>a) Personal Information (if applicable)</h3>
-        <ul>
-            <li>Name</li>
-            <li>Email address</li>
-            <li>Phone number<br>(Only if you sign in or provide these voluntarily)</li>
-        </ul>
-
-        <h3>b) Non-Personal Information</h3>
-        <ul>
-            <li>Device information (model, OS version)</li>
-            <li>App usage data (screens visited, time spent)</li>
-            <li>Crash reports & performance data</li>
-            <li>Advertising ID (for ads and analytics)</li>
-        </ul>
-
-        <h2>3. How We Use Your Information</h2>
-        <p>We use the collected information to:</p>
-        <ul>
-            <li>Provide and improve the app experience</li>
-            <li>Personalize content</li>
-            <li>Fix bugs and improve performance</li>
-            <li>Send important app-related notifications</li>
-            <li>Show relevant ads (if ads are enabled)</li>
-            <li>Analyze user behavior to improve features</li>
-        </ul>
-
-        <h2>4. Data Sources & Content Disclaimer</h2>
-        <ul>
-            <li>The content shown in the app is collected from public sources such as PIB, official websites, newspapers and trusted media portals.</li>
-            <li>We do not collect any sensitive personal data.</li>
-        </ul>
-
-        <h2>5. Data Sharing</h2>
-        <ul>
-            <li>We do not sell or rent your personal data.</li>
-            <li>We may share limited data with:
+            <div class="policy-section">
+                <h2>1. Information We Collect</h2>
+                
+                <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: #334155;">A. Personal Data</h3>
+                <p>We may collect personally identifiable information that you voluntarily give to us when you register with the Services or when you choose to participate in various activities, such as:</p>
                 <ul>
-                    <li>Analytics services (e.g., Firebase, Google Analytics)</li>
-                    <li>Advertising partners (e.g., AdMob)<br>Only to improve app performance and show relevant ads.</li>
+                    <li><strong>Identity Data:</strong> Name, email address, and phone number.</li>
+                    <li><strong>Business Data (TeleCRM):</strong> Company name, team hierarchy, and employee details.</li>
+                    <li><strong>Financial Data:</strong> Payment details (processed via secure third-party gateways like Razorpay/Stripe; we do not store raw card data).</li>
                 </ul>
-            </li>
-            <li>All such partners follow their own privacy policies.</li>
-        </ul>
 
-        <h2>6. Third-Party Services</h2>
-        <p>The app may use third-party services such as:</p>
-        <ul>
-            <li>Google Firebase</li>
-            <li>Google AdMob</li>
-            <li>Google Play Services</li>
-        </ul>
-        <p>These services may collect information used to identify you. Their data usage is governed by their respective privacy policies.</p>
+                <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: #334155; margin-top: 2rem;">B. Sensitive Permissions (Mobile Applications)</h3>
+                <p>To provide specialized B2B and B2C features, our apps require access to certain sensitive permissions. We strictly adhere to the Google Play Developer Program Policy regarding these permissions.</p>
+                
+                <div style="background: #f1f5f9; padding: 20px; border-radius: 12px; margin-bottom: 1.5rem;">
+                    <p><strong>Call Log & Phone Permissions (Vivtej TeleCRM):</strong></p>
+                    <p style="margin-top: 10px;">Vivtej TeleCRM specifically accesses and uploads Call Log data (including phone numbers, timestamps, and call durations). This data is collected solely to provide automated business activity tracking for the employer and is not used for advertising or shared with unauthorized third parties. This collection occurs even when the app is in the background to ensure call logging is not interrupted.</p>
+                </div>
+                
+                <ul>
+                    <li><strong>Contact List:</strong> To allow users to import business leads directly into the CRM.</li>
+                    <li><strong>Storage/Media:</strong> To allow users to upload profile pictures or download educational PDF materials in the Tej Reels app.</li>
+                </ul>
 
-        <h2>7. Data Security</h2>
-        <p>We take reasonable measures to protect your data, but no method of transmission over the internet is 100% secure. We cannot guarantee absolute security.</p>
+                <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: #334155; margin-top: 2rem;">C. Data from Integrated Services (Meta & Google)</h3>
+                <p>If you link your Facebook Lead Ads or Google Ads account to Vivtej TeleCRM, we collect the "Lead Information" (Names, Emails, Phone Numbers) generated by your ads to automatically populate your CRM database.</p>
+            </div>
 
-        <h2>8. Children's Privacy</h2>
-        <ul>
-            <li>Tej does not knowingly collect any personal information from children under the age of 13.</li>
-            <li>If you believe your child has provided personal data, please contact us and we will remove it immediately.</li>
-        </ul>
+            <div class="policy-section">
+                <h2>2. Use of Your Information</h2>
+                <p>We use the information collected to:</p>
+                <ul>
+                    <li>Create and manage your account.</li>
+                    <li>Process payments and subscriptions.</li>
+                    <li><strong>B2C:</strong> Deliver a personalized feed of current affairs reels.</li>
+                    <li><strong>B2B:</strong> Generate analytics reports on sales calls and lead conversion rates.</li>
+                    <li>Fix bugs, prevent fraud, and improve app performance.</li>
+                    <li>Comply with legal obligations in India.</li>
+                </ul>
+            </div>
 
-        <h2>9. User Control & Choices</h2>
-        <p>You can:</p>
-        <ul>
-            <li>Uninstall the app anytime to stop data collection</li>
-            <li>Disable notifications from device settings</li>
-            <li>Control ad personalization from Google Ad Settings</li>
-        </ul>
+            <div class="policy-section">
+                <h2>3. Disclosure of Your Information</h2>
+                <p>We do not sell, rent, or trade your personal information. We may share information with:</p>
+                <ul>
+                    <li><strong>Service Providers:</strong> Third-party vendors who perform services for us (e.g., AWS for hosting, Firebase for analytics).</li>
+                    <li><strong>Legal Requirements:</strong> If required by law or to protect our rights in the jurisdiction of Visakhapatnam, AP.</li>
+                    <li><strong>Business Transfers:</strong> In connection with a merger or sale of company assets.</li>
+                </ul>
+            </div>
 
-        <h2>10. Changes to This Privacy Policy</h2>
-        <ul>
-            <li>We may update this Privacy Policy from time to time.</li>
-            <li>Any changes will be posted on this page.</li>
-            <li>You are advised to review this page periodically.</li>
-        </ul>
+            <div class="policy-section">
+                <h2>4. Data Security & Retention</h2>
+                <p>We use administrative, technical, and physical security measures (including SSL encryption) to help protect your personal information.</p>
+                <ul>
+                    <li><strong>Retention:</strong> We retain your data as long as your account is active.</li>
+                    <li><strong>B2B Data:</strong> If a business subscription expires, lead data is archived for 90 days before permanent deletion, unless requested otherwise.</li>
+                </ul>
+            </div>
 
-        <h2>11. No Government Affiliation</h2>
-        <p>Tej and Vivtej Educational Services Private Limited are not affiliated with any government organization or exam conducting authority.</p>
+            <div class="policy-section">
+                <h2>5. Your Data Rights (India IT Act Compliance)</h2>
+                <p>You have the right to:</p>
+                <ul>
+                    <li><strong>Access/Review:</strong> Request a copy of the data we hold about you.</li>
+                    <li><strong>Correction:</strong> Ask us to update or fix inaccurate information.</li>
+                    <li><strong>Deletion:</strong> Request that we delete your personal data (subject to tax/legal retention requirements).</li>
+                    <li><strong>Withdraw Consent:</strong> You can revoke app permissions (Call Logs, Contacts) at any time through your device settings, though this will disable core features of the TeleCRM.</li>
+                </ul>
+                
+                <h3 style="font-size: 1.15rem; margin-top: 1.5rem; margin-bottom: 1rem; color: #334155;">Account Deletion Specifics</h3>
+                <p><strong>For Vivtej TeleCRM (B2B):</strong> Accounts are managed and provisioned by the User’s Employer/Organization Administrator. Individual users seeking to delete their profile must contact their organization's Admin. The Organization Admin may request a full workspace data purge by contacting support@vivtejsoftwaresolutions.com.</p>
+                <p><strong>For Tej Reels (B2C):</strong> Users can independently request account deletion via our web portal through Email OTP verification.</p>
+            </div>
 
-        <h2>12. Contact Us</h2>
-        <p>If you have any questions about this Privacy Policy, you can contact us at:</p>
-        <p><strong>Vivtej Educational Services Private Limited</strong><br>
-            📧 <a href="mailto:support@topicquiz.ai">support@topicquiz.ai</a><br>
-            📧 <a href="mailto:teja@topicprep.com">teja@topicprep.com</a></p>
+            <div class="policy-section">
+                <h2>6. Grievance Redressal</h2>
+                <p>In accordance with Information Technology Act 2000 and the Consumer Protection (E-Commerce) Rules, 2020:</p>
+                <div class="contact-box">
+                    <p><strong>Grievance Officer:</strong> Teja Sai</p>
+                    <p><strong>Designation:</strong> Director / Grievance Officer</p>
+                    <p><strong>Email:</strong> <a href="mailto:teja@topicprep.com">teja@topicprep.com</a></p>
+                    <p><strong>Address:</strong> 32-3-32, Natthyapalem, Visakhapatnam, Andhra Pradesh, India - 530012</p>
+                </div>
+            </div>
+
+            <div class="policy-section">
+                <h2>7. No Government Affiliation Disclaimer</h2>
+                <p>The Tej – Current Affairs Reels app provides information sourced from public domain entities (PIB, official gazettes, etc.). Vivtej Educational Services Private Limited is a private entity and does not represent any government organization. We are not responsible for any discrepancies in government-sourced data.</p>
+            </div>
+
+            <div class="policy-section">
+                <h2>8. Contact Us</h2>
+                <p>If you have questions or comments about this Privacy Policy, please contact us at:</p>
+                <div class="contact-box">
+                    <p><strong>Email:</strong> <a href="mailto:support@vivtejsoftwaresolutions.com">support@vivtejsoftwaresolutions.com</a></p>
+                </div>
+            </div>
+
+        </div>
+      </div>
     </div>
 
     <!-- Footer -->
     <footer class="site-footer">
-        <div class="container">
-            <div class="footer-top">
-                <div class="footer-brand-col">
-                    <a href="./index.html" class="footer-logo">
-                        <img src="./logo_vivtej.png" alt="VivTej Software Solutions">
-                        <span>VivTej</span>
-                    </a>
-                    <p class="footer-tagline">Transforming ideas into high-performing digital products.</p>
-                </div>
-                <div class="footer-links-col">
-                    <h4>Company</h4>
-                    <ul>
-                        <li><a href="./about.html">About Us</a></li>
-                        <li><a href="./projects.html">Our Work</a></li>
-                        <li><a href="./services.html">Services</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links-col">
-                    <h4>Services</h4>
-                    <ul>
-                        <li><a href="./services.html">Mobile Apps</a></li>
-                        <li><a href="./services.html">Web Development</a></li>
-                        <li><a href="./services.html">UI/UX Design</a></li>
-                        <li><a href="./services.html">Consulting</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links-col">
-                    <h4>Contact</h4>
-                    <ul class="contact-list">
-                        <li>Visakhapatnam, India</li>
-                        <li><a href="mailto:support@vivtejsoftwaresolutions.com">support@vivtejsoftwaresolutions.com</a></li>
-                        <li><a href="tel:+919121947554">+91 9121947554</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 VivTej Software Solutions. All rights reserved.</p>
-                <div class="footer-legal">
-                    <a href="./privacy.html">Privacy Policy</a>
-                    <a href="./terms.html">Terms of Service</a>
-                    <a href="./refund.html">Refund Policy</a>
-                    <a href="./delete-account.html">Delete Account</a>
-                </div>
+      <div class="container">
+        <div class="footer-top">
+          <div class="footer-brand-col">
+            <a href="./index.html" class="footer-logo">
+              <img src="./logo_vivtej.png" alt="VivTej Software Solutions" />
+              <span>VivTej</span>
+            </a>
+            <p class="footer-tagline">
+              Transforming ideas into high-performing digital products.
+            </p>
+          </div>
+          <div class="footer-links-col">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="./about.html">About Us</a></li>
+              <li><a href="./projects.html">Our Work</a></li>
+              <li><a href="./services.html">Services</a></li>
+            </ul>
+          </div>
+          <div class="footer-links-col">
+            <h4>Services</h4>
+            <ul>
+              <li><a href="./services.html">Mobile Apps</a></li>
+              <li><a href="./services.html">Web Development</a></li>
+              <li><a href="./services.html">UI/UX Design</a></li>
+              <li><a href="./services.html">Consulting</a></li>
+            </ul>
+          </div>
+          <div class="footer-links-col">
+            <h4>Contact</h4>
+            <ul class="contact-list">
+              <li>Visakhapatnam, India</li>
+              <li>
+                <a href="mailto:support@vivtejsoftwaresolutions.com"
+                  >support@vivtejsoftwaresolutions.com</a
+                >
+              </li>
+              <li><a href="tel:+919121947554">+91 9121947554</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2026 VivTej Software Solutions. All rights reserved.</p>
+          <div class="footer-legal">
+                <a href="./privacy.html">Privacy Policy</a>
+                <a href="./terms.html">Terms of Service</a>
+                <a href="./refund.html">Refund Policy</a>
+                <a href="./delete-account.html">Delete Account</a>
             </div>
         </div>
+      </div>
     </footer>
 
     <script src="./script.js"></script>
-</body>
-
+  </body>
 </html>
