@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Terms and Conditions | Tej – Current Affairs Reels</title>
+    <title>Terms of Service | Vivtej Software Solutions</title>
     <link rel="stylesheet" href="./styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -12,64 +12,189 @@
       rel="stylesheet"
     />
     <style>
-      .policy-content {
+      body {
+        background-color: #f8fafc;
+      }
+      
+      .policy-wrapper {
+        padding: 60px 20px 80px;
+        min-height: 80vh;
+      }
+
+      .policy-card {
         max-width: 900px;
         margin: 0 auto;
-        padding: 80px 20px 60px;
+        background: #ffffff;
+        border-radius: 24px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+        padding: 60px 80px;
+        border: 1px solid rgba(226, 232, 240, 0.8);
       }
 
-      .policy-content h1 {
-        font-size: 2.5rem;
-        margin-bottom: 1rem;
-        color: #1a1a1a;
-      }
-
-      .policy-content h2 {
-        font-size: 1.5rem;
-        margin-top: 2.5rem;
-        margin-bottom: 1rem;
-        color: #2c2c2c;
-      }
-
-      .policy-content h3 {
-        font-size: 1.2rem;
-        margin-top: 2rem;
-        margin-bottom: 0.75rem;
-        color: #3c3c3c;
-      }
-
-      .policy-content p,
-      .policy-content ul {
-        font-size: 1rem;
-        line-height: 1.8;
-        color: #4a4a4a;
-        margin-bottom: 1rem;
-      }
-
-      .policy-content ul {
-        padding-left: 1.5rem;
-      }
-
-      .policy-content li {
-        margin-bottom: 0.5rem;
-      }
-
-      .policy-intro {
-        font-size: 1.1rem;
-        color: #666;
-        margin-bottom: 2rem;
+      @media (max-width: 768px) {
+        .policy-card {
+            padding: 40px 24px;
+        }
+        
+        .policy-wrapper {
+            padding: 40px 16px 60px;
+        }
       }
 
       .policy-header {
         text-align: center;
+        margin-bottom: 3.5rem;
+        padding-bottom: 2.5rem;
+        border-bottom: 1px solid #e2e8f0;
+      }
+
+      .policy-header h1 {
+        font-size: 3rem;
+        color: var(--text-main);
+        margin-bottom: 1.5rem;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+      }
+
+      .badge-date {
+        display: inline-flex;
+        align-items: center;
+        background: rgba(106, 90, 224, 0.08);
+        color: var(--accent-blue);
+        padding: 8px 20px;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 0.95rem;
+        letter-spacing: 0.01em;
+      }
+
+      .policy-body {
+        font-size: 1.05rem;
+        color: #475569;
+      }
+      
+      .policy-intro {
+        margin-bottom: 2rem;
+        font-size: 1.15rem;
+        line-height: 1.8;
+      }
+
+      .policy-section {
         margin-bottom: 3rem;
       }
 
-      .policy-header .subtitle {
-        font-size: 1.1rem;
-        color: #666;
-        margin-top: 0.5rem;
+      .policy-section h2 {
+        font-size: 1.6rem;
+        color: var(--text-main);
+        margin-bottom: 1.25rem;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        letter-spacing: -0.01em;
       }
+      
+      /* Subtle accent bar next to headings */
+      .policy-section h2::before {
+          content: '';
+          display: block;
+          width: 6px;
+          height: 28px;
+          background: linear-gradient(to bottom, var(--accent-blue), var(--accent-hover));
+          margin-right: 16px;
+          border-radius: 4px;
+      }
+
+      .policy-section p {
+        margin-bottom: 1rem;
+        line-height: 1.75;
+      }
+
+      .policy-section ul {
+        list-style: none;
+        padding-left: 0;
+        margin-top: 1.25rem;
+        margin-bottom: 1.25rem;
+        background: #fcfcfc;
+        padding: 24px;
+        border-radius: 12px;
+        border: 1px solid #f1f5f9;
+      }
+      
+      .policy-section ul li {
+          position: relative;
+          padding-left: 28px;
+          margin-bottom: 1rem;
+          line-height: 1.6;
+      }
+      
+      .policy-section ul li:last-child {
+          margin-bottom: 0;
+      }
+      
+      .policy-section ul li::before {
+          content: "•";
+          color: var(--accent-blue);
+          font-weight: bold;
+          font-size: 1.2em;
+          position: absolute;
+          left: 6px;
+          top: -2px;
+      }
+      
+      .contact-box {
+          background: #f8faff;
+          border: 1px solid #e2e8f0;
+          border-radius: 16px;
+          padding: 32px;
+          margin-top: 1.5rem;
+      }
+      
+      .contact-box p {
+          margin-bottom: 0.75rem;
+      }
+      
+      .contact-box strong {
+          color: var(--text-main);
+          font-weight: 700;
+      }
+      
+      .important-note {
+          background-color: #fef2f2;
+          border-left: 4px solid #ef4444;
+          padding: 20px 24px;
+          border-radius: 0 12px 12px 0;
+          color: #991b1b;
+          font-weight: 600;
+          margin: 2.5rem 0;
+          line-height: 1.6;
+      }
+      
+      .policy-subtitle {
+          color: #64748b;
+          font-size: 0.95rem;
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
+          margin-bottom: 0.5rem;
+          font-weight: 700;
+      }
+      
+      /* Smooth link transitions */
+      a {
+          text-decoration: none;
+          color: inherit;
+      }
+      
+      .contact-box a {
+          color: var(--accent-blue);
+          font-weight: 600;
+          transition: color 0.2s;
+      }
+      
+      .contact-box a:hover {
+          color: var(--accent-hover);
+          text-decoration: underline;
+      }
+
     </style>
   </head>
 
@@ -98,140 +223,143 @@
     </nav>
 
     <!-- Policy Content -->
-    <div class="policy-content">
-      <div class="policy-header">
-        <h1>📜 Terms and Conditions</h1>
-        <p class="subtitle">
-          For Tej – Current Affairs Reels App<br />
-          Owned by Vivtej Educational Services Private Limited
-        </p>
+    <div class="policy-wrapper">
+      <div class="policy-card">
+        <div class="policy-header">
+          <h1>Terms of Service</h1>
+          <span class="badge-date">Last Updated: February 6, 2026</span>
+        </div>
+
+        <div class="policy-body">
+            
+            <p class="policy-intro">
+                Welcome to Vivtej Software Solutions. These Terms of Service ("Terms") constitute a legally binding agreement between you (whether personally or on behalf of an entity) and Vivtej Educational Services Private Limited ("Company," "we," "us," or "our"), concerning your access to and use of our websites, the Tej – Current Affairs Reels mobile application, the Vivtej TeleCRM platform, and any other media form, media channel, mobile website, or mobile application related, linked, or otherwise connected thereto (collectively, the "Services").
+            </p>
+
+            <p>
+                By accessing the Services, you acknowledge that you have read, understood, and agreed to be bound by all of these Terms.
+            </p>
+
+            <div class="important-note">
+                IF YOU DO NOT AGREE WITH ALL OF THESE TERMS, THEN YOU ARE EXPRESSLY PROHIBITED FROM USING THE SERVICES AND YOU MUST DISCONTINUE USE IMMEDIATELY.
+            </div>
+
+            <div class="policy-section">
+                <h2>1. Company Information</h2>
+                <div class="contact-box">
+                    <p><strong>Owner:</strong> Vivtej Educational Services Private Limited</p>
+                    <p><strong>Address:</strong> 32-3-32, Natthyapalem, Visakhapatnam, Andhra Pradesh, India - 530012</p>
+                    <p><strong>Grievance Officer:</strong> Teja Sai (<a href="mailto:teja@topicprep.com">teja@topicprep.com</a>)</p>
+                </div>
+            </div>
+
+            <div class="policy-section">
+                <h2>2. Services Description</h2>
+                <p>The Company provides two primary categories of Services:</p>
+                <ul>
+                    <li><strong>B2C (Tej – Current Affairs Reels):</strong> An educational platform providing current affairs, general knowledge, and exam-related content via short-form video (reels).</li>
+                    <li><strong>B2B (Vivtej TeleCRM):</strong> A business-to-business Customer Relationship Management (CRM) software-as-a-service (SaaS) designed for lead management, team monitoring, and call logging.</li>
+                </ul>
+            </div>
+
+            <div class="policy-section">
+                <h2>3. Eligibility and Account Registration</h2>
+                <ul>
+                    <li><strong>Age Requirement:</strong> You must be at least 13 years of age to use Tej Reels. For Vivtej TeleCRM, you must be at least 18 years of age and capable of entering into legally binding contracts.</li>
+                    <li><strong>Account Accuracy:</strong> You agree to provide true, accurate, and complete information during registration and to keep this information updated.</li>
+                    <li><strong>Security:</strong> You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account.</li>
+                </ul>
+            </div>
+
+            <div class="policy-section">
+                <h2>4. B2B Specific Terms: Vivtej TeleCRM</h2>
+                <ul>
+                    <li><strong>Data Controller vs. Data Processor:</strong> In the context of TeleCRM, the Customer (Business) is the "Data Controller" of their lead data. Vivtej acts as the "Data Processor."</li>
+                    <li><strong>Compliance with Laws:</strong> You represent and warrant that all lead data uploaded to the CRM has been collected with proper consent. You agree to comply with all telemarketing laws, "Do Not Disturb" (DND) registries, and data protection regulations applicable in your jurisdiction.</li>
+                    <li><strong>Telephony Permissions:</strong> The TeleCRM mobile application requires access to Call Logs and Phone Permissions to log business interactions. By using the app, you grant us permission to process this data for your internal business analytics.</li>
+                    <li><strong>Integration:</strong> If you link third-party accounts (Meta/Facebook Lead Ads, Google Ads), you grant us permission to access and retrieve data from those platforms as required to populate your CRM.</li>
+                </ul>
+            </div>
+
+            <div class="policy-section">
+                <h2>5. B2C Specific Terms: Tej – Current Affairs Reels</h2>
+                <ul>
+                    <li><strong>Informational Purpose:</strong> Content provided is for educational and general informational purposes only. We do not guarantee the accuracy, completeness, or usefulness of this information.</li>
+                    <li><strong>No Government Affiliation:</strong> Vivtej Educational Services Private Limited is a private entity. We are not affiliated with, authorized by, or endorsed by any government agency, recruitment board, or exam-conducting authority.</li>
+                    <li><strong>Exam Results:</strong> We make no guarantees regarding success in any competitive examinations or job placements based on the use of the App.</li>
+                </ul>
+            </div>
+
+            <div class="policy-section">
+                <h2>6. Intellectual Property Rights</h2>
+                <p>
+                    Unless otherwise indicated, the Services and all source code, databases, functionality, software, website designs, audio, video, text, photographs, and graphics on the Services (collectively, the "Content") and the trademarks and logos contained therein are owned or controlled by us or licensed to us, and are protected by copyright and trademark laws of India and international copyright laws.
+                </p>
+            </div>
+
+            <div class="policy-section">
+                <h2>7. Prohibited Activities</h2>
+                <p>You may not access or use the Services for any purpose other than that for which we make the Services available. Prohibited activity includes, but is not limited to:</p>
+                <ul>
+                    <li>Systematically retrieving data to create a collection, compilation, database, or directory without written permission.</li>
+                    <li>Circumventing, disabling, or otherwise interfering with security-related features.</li>
+                    <li>Engaging in unauthorized framing of or linking to the Services.</li>
+                    <li>Using the Services to send "spam" or unauthorized telemarketing calls.</li>
+                    <li>Attempting to decipher, decompile, disassemble, or reverse engineer any of the software comprising the Services.</li>
+                </ul>
+            </div>
+
+            <div class="policy-section">
+                <h2>8. Payments and Subscriptions</h2>
+                <ul>
+                    <li><strong>Billing:</strong> We use third-party payment processors. You agree to provide current, complete, and accurate purchase and account information for all purchases.</li>
+                    <li><strong>Renewals:</strong> Subscriptions automatically renew unless cancelled.</li>
+                    <li><strong>Fee Changes:</strong> We reserve the right to change our prices at any time. Any price changes will be communicated to you in advance.</li>
+                    <li><strong>Taxes:</strong> All fees are exclusive of applicable taxes (GST), unless stated otherwise.</li>
+                </ul>
+            </div>
+
+            <div class="policy-section">
+                <h2>9. Limitation of Liability</h2>
+                <p>
+                    To the maximum extent permitted by law, Vivtej Educational Services Private Limited shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits or revenues (such as exam failure, loss of business leads, or data breaches caused by user negligence). <strong>USE OF THE SERVICES IS AT YOUR SOLE RISK.</strong>
+                </p>
+            </div>
+
+            <div class="policy-section">
+                <h2>10. Term and Termination</h2>
+                <p>
+                    These Terms shall remain in full force and effect while you use the Services. We reserve the right, in our sole discretion and without notice or liability, to deny access to and use of the services (including blocking certain IP addresses) to any person for any reason, including for breach of any representation, warranty, or covenant contained in these terms.
+                </p>
+            </div>
+
+            <div class="policy-section">
+                <h2>11. Governing Law and Jurisdiction</h2>
+                <p>
+                    These Terms and your use of the Services are governed by and construed in accordance with the laws of India. Any legal action or proceeding arising under these Terms shall be brought exclusively in the courts located in Visakhapatnam, Andhra Pradesh, India, and the parties hereby consent to the personal jurisdiction and venue therein.
+                </p>
+            </div>
+
+            <div class="policy-section">
+                <h2>12. Disclaimer</h2>
+                <div class="important-note" style="margin-top: 0; background-color: #f8fafc; border-left-color: #cbd5e1; color: #475569;">
+                    THE SERVICES ARE PROVIDED ON AN AS-IS AND AS-AVAILABLE BASIS. YOU AGREE THAT YOUR USE OF THE SERVICES WILL BE AT YOUR SOLE RISK. TO THE FULLEST EXTENT PERMITTED BY LAW, WE DISCLAIM ALL WARRANTIES, EXPRESS OR IMPLIED, IN CONNECTION WITH THE SERVICES AND YOUR USE THEREOF.
+                </div>
+            </div>
+
+            <div class="policy-section">
+                <h2>13. Contact Us</h2>
+                <p>For any questions, complaints, or to resolve a dispute regarding the Services, please contact:</p>
+                <div class="contact-box">
+                    <p><strong>Vivtej Educational Services Private Limited</strong></p>
+                    <p><strong>Attn:</strong> Teja Sai (Grievance Officer)</p>
+                    <p><strong>Address:</strong> 32-3-32, Natthyapalem, Visakhapatnam, AP, India</p>
+                    <p><strong>Email:</strong> <a href="mailto:support@vivtejsoftwaresolutions.com">support@vivtejsoftwaresolutions.com</a></p>
+                </div>
+            </div>
+
+        </div>
       </div>
-
-      <h2>1. Acceptance of Terms</h2>
-      <p>
-        By downloading, accessing, or using the Tej – Current Affairs Reels
-        mobile application ("App"), you agree to be bound by these Terms and
-        Conditions. If you do not agree to these terms, please do not use the
-        app.
-      </p>
-
-      <h2>2. About Us</h2>
-      <p>Tej – Current Affairs Reels is a product owned and operated by:</p>
-      <p>
-        <strong>Vivtej Educational Services Private Limited</strong><br />
-        (Hereafter referred to as "Vivtej", "we", "us", or "our")
-      </p>
-      <p>
-        Tej is an educational platform created to provide current affairs and
-        exam-related content in short video (reels) format.
-      </p>
-
-      <h2>3. Purpose of the App</h2>
-      <ul>
-        <li>
-          This app is intended only for educational and informational purposes.
-        </li>
-        <li>
-          We do not guarantee success in any examination or selection in any job
-          or institution.
-        </li>
-      </ul>
-
-      <h2>4. No Government Affiliation</h2>
-      <p>
-        Tej and Vivtej Educational Services Private Limited are not affiliated
-        with, endorsed by, or connected to any government organization or exam
-        conducting authority.
-      </p>
-
-      <h2>5. Content Disclaimer</h2>
-      <ul>
-        <li>
-          The information provided in the app is collected from publicly
-          available and trusted sources such as official websites, newspapers,
-          PIB, and media portals.
-        </li>
-        <li>
-          We do not claim ownership of any government data or public
-          information.
-        </li>
-        <li>
-          Users are advised to verify information from official sources before
-          using it for any official purpose.
-        </li>
-      </ul>
-
-      <h2>6. User Responsibilities</h2>
-      <p>By using the app, you agree:</p>
-      <ul>
-        <li>Not to misuse the app or its content</li>
-        <li>
-          Not to copy, reproduce, distribute, or resell any content without
-          permission
-        </li>
-        <li>
-          Not to attempt to hack, reverse engineer, or damage the app or its
-          systems
-        </li>
-      </ul>
-
-      <h2>7. Intellectual Property</h2>
-      <ul>
-        <li>
-          All content, design, logos, UI, videos, and branding in the app
-          (except third-party sources) are the property of Vivtej Educational
-          Services Private Limited.
-        </li>
-        <li>
-          All third-party names, logos, and sources belong to their respective
-          owners and are used for identification and educational purposes only.
-        </li>
-      </ul>
-
-      <h2>8. Account & Access</h2>
-      <p>We reserve the right to:</p>
-      <ul>
-        <li>
-          Suspend or terminate access to the app if a user violates these terms
-        </li>
-        <li>
-          Modify or discontinue any part of the app at any time without prior
-          notice
-        </li>
-      </ul>
-
-      <h2>9. Limitation of Liability</h2>
-      <ul>
-        <li>
-          Vivtej Educational Services Private Limited shall not be responsible
-          for any direct or indirect loss, including exam results, job results,
-          or decisions made based on the app content.
-        </li>
-        <li>Use of the app is entirely at your own risk.</li>
-      </ul>
-
-      <h2>10. Modifications to Terms</h2>
-      <ul>
-        <li>We may update these Terms & Conditions from time to time.</li>
-        <li>
-          Continued use of the app after changes means you accept the updated
-          terms.
-        </li>
-      </ul>
-
-      <h2>11. Governing Law</h2>
-      <p>
-        These terms shall be governed by and interpreted in accordance with the
-        laws of India.
-      </p>
-
-      <h2>12. Contact Information</h2>
-      <p>For any questions or concerns, you can contact us at:</p>
-      <p>
-        <strong>Vivtej Educational Services Private Limited</strong><br />
-        📧 <a href="mailto:support@topicquiz.ai">support@topicquiz.ai</a><br />
-        📧 <a href="mailto:teja@topicprep.com">teja@topicprep.com</a>
-      </p>
     </div>
 
     <!-- Footer -->
